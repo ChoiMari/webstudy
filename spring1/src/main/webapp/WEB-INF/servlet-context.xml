@@ -7,5 +7,24 @@
     "http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
     https://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd
         https://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd">
-    
+   <!-- Spring Web MVC 설정들을 애너테이션 기반으로 설정할 수 있도록 하기 위해서 안그러면 전부다 xml써야하는데 클래스 만들때 @으로 대체하기 위해서-->
+   <mvc:annotation-driven>
+   	 <mvc:message-converters>
+   	 	<bean class="org.springframework.http.converter.StringHttpMessageConverter">
+   	 		<property name="supportedMediaType"> <!-- StringHttpMessageConverter클래스에 있는 필드(웹에서는 프로퍼티)이름 작성해야 한다고 -->
+   	 			<list>
+   	 				<value>text/html; charset=UTF-8</value> <!-- jsp set프로터티랑 같은 거라고 생각하라고 문자열 가지고 있는 배열(list)을 넘기겠다. -->
+   	 				<!-- 메세지 변환기가 html을 지원한다 정도로 이해하면 된다고. -->
+   	 			</list>
+   	 		</property>
+   	 	</bean>
+   	 </mvc:message-converters>
+   </mvc:annotation-driven>
+   <!-- 이거 중요하다고 함 -->
+   <!-- 웹 스프링 MVC에서 디스펙쳐 서블릿(dispatcherServlet)이 처리하지 않는 정적인 요청들이 있는데 그 요청들에 필요한 파일들이 있는데 
+   예) 이미지 파일, css작성 파일, 자바 스크립트 파일, 등등.. 이 있는 폴더 위치를 설정해 두는 것.
+   정적 리소스들(이미지,css,js,...)들을 /webapp/static/폴더 아래에 작성하겠다라고 설정 한 것.-->
+
+   <mvc:resources location="/static/" mapping="/**" />
+   
 </beans>
