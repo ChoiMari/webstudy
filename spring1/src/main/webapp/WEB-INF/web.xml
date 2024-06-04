@@ -11,6 +11,7 @@
 	<!-- 스프링 context(컨텍스트)를 저장한 파일 위치 -->
 	<!-- WAS가 시작되고 나서 스프링 프레임 워크가 시작이 되고 여기서 설정한 이름의 파일을 읽어 드리게 됨. -->
 	<!-- 변수 이름도 맞춰주어야 한다고. 스프링 문서에 있는 변수이름을 가지고 온거라고. -->
+    <!-- ContextLoaderListener가 사용하는 XML web.xml다 읽으면 발생되는 리스너.-->
 	<context-param>
 		<param-name>contextConfigLocation</param-name><!-- 변수이름 설정. 약속된걸 써야함 -->
 		<param-value>WEB-INF/application-context.xml</param-value><!-- 변수 값 설정 -->
