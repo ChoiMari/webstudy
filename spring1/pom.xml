@@ -1,6 +1,7 @@
 <project xmlns="https://maven.apache.org/POM/4.0.0"
 	xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="https://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	xsi:schemaLocation="https://maven.apache.org/POM/4.0.0 
+	https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.itwill</groupId>
 	<artifactId>spring1</artifactId>
@@ -25,7 +26,7 @@
 
 		<!--jackson-databind -->
 		<jackson-version>2.17.1</jackson-version>
-		
+
 		<!-- lombok 버전 번호를 상수로 선언함-->
 		<lombok-version>1.18.32</lombok-version>
 	</properties>
@@ -151,10 +152,11 @@
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<version>${lombok-version}</version>
-			<scpope>compile</scpope> <!-- 의미 : 이 라이브러리는 프로젝트를 빌드할때만 (.class 파일로 만들때 까지만) 
+			<scpope>compile</scpope> <!-- 의미 : 이 라이브러리는 프로젝트를 빌드할때만 (.class 파일로
+			만들때 까지만) 
 			사용하고 웹서버에 배포 되지 않게 설정. scope로 지정하지 않은 것들은 기본으로 웹서버에 배포 됨 -->
 		</dependency>
-		
+
 	</dependencies>
 
 	<!--빌드 툴(플러그인) 설정 -->

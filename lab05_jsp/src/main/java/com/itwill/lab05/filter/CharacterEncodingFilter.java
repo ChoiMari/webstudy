@@ -32,6 +32,7 @@ public class CharacterEncodingFilter extends HttpFilter {
 		//web.xml에서 <filter>의 <param-name> 값을 아규먼트로 전달하면,
 		//<filter>의 <param-value> 값을 리턴해줌.
 		encoding = filterConfig.getInitParameter("encoding"); //web.xml에 있는 <param-name>encoding</param-name> 이름과 같은걸로 아규먼트로 줘야함
+		//->filterConfig.getInitParameter("encoding"); 리턴값 UTF-8이라고 함.
 		log.debug("init:encoding={}",encoding);
 	}
 	
