@@ -22,6 +22,7 @@
 <body>
     <header>
         <h1>Home</h1>
+        <h2>${now}</h2>
     </header>
     
     <main></main>

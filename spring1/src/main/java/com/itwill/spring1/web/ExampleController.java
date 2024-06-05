@@ -1,6 +1,9 @@
 package com.itwill.spring1.web;
 
+import java.time.LocalDateTime;
+
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import lombok.extern.slf4j.Slf4j;
@@ -11,8 +14,11 @@ import lombok.extern.slf4j.Slf4j;
 public class ExampleController {
 	
 	@GetMapping("/")
-	public String home() {
+	public String home(Model model) {
 		log.debug("home()");//log변수 만든적 없지만 @Slf4j을 사용해서 사용 가능함.
+		
+		LocalDateTime now = LocalDateTime.now();
+		model.addAttribute("now", now);
 		
 		return "home";
 	}
